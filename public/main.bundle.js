@@ -180,6 +180,8 @@ var HomeComponent = (function () {
         this.resumeService.getResumeData().subscribe(function (data) {
             console.log(data.resume[0]);
             _this.resumeData = data.resume[0];
+        }, function (err) {
+            return false;
         });
     }
     HomeComponent.prototype.ngOnInit = function () {

@@ -47,12 +47,7 @@ const ResumeSchema = mongoose.Schema({
 const Resume = module.exports = mongoose.model('Resume', ResumeSchema);
 
 module.exports.getResume = function(callback) {
-    // if (id === "") {
     Resume.find({}, callback);
-    // } 
-    // else {
-    //     Resume.findById({ "_id": id }, callback);
-    // }
 }
 
 module.exports.createResume = function(newResume, callback) {
