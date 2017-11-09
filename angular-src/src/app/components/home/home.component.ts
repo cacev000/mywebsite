@@ -9,15 +9,13 @@ import { ResumeService } from '../../services/resume.service';
 export class HomeComponent implements OnInit {
   resumeData = [];
 
-  constructor(private resumeService: ResumeService) { }
-
-  ngOnInit() {
-    setTimeout(function() {
-      this.resumeService.getResumeData().subscribe(data => {
-        console.log(data.resume[0]);
-        this.resumeData = data.resume[0];
-      });
-    }, 1000);
+  constructor(private resumeService: ResumeService) {
+    this.resumeService.getResumeData().subscribe(data => {
+      console.log(data.resume[0]);
+      this.resumeData = data.resume[0];
+    });
   }
 
+  ngOnInit() {
+  }
 }
