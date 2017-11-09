@@ -231,7 +231,7 @@ var ResumeService = (function () {
         // used in production
         // return this.http.get('http://localhost:3000/resume', {headers: headers}).map(res => res.json());
         // used for heroku deployment
-        return this.http.get('/resume', { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.get('/', { headers: headers }).map(function (res) { return res.json(); });
     };
     return ResumeService;
 }());

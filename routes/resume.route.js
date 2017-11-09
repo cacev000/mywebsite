@@ -28,12 +28,14 @@ router.get('/resume/:id', (req, res, next) => {
         }
     });
 });
-router.get('/resume', (req, res, next) => {
-    const id = ''
-    Resume.getResume(id, (err, resume) => {
+router.get('/', (req, res, next) => {
+    // const id = ''
+    // console.log('id: ' + id)
+    Resume.getResume((err, resume) => {
         if (err) {
             res.json({ success: false, msg: 'Failed to get resume' });
         } else {
+            console.log(resume);
             res.json({ resume: resume });
         }
     });
