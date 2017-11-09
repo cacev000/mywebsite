@@ -17,7 +17,7 @@ router.delete('/deleteResume', (req, res, next) => {
     });
 });
 
-router.get('/', (req, res, next) => {
+router.get('/resume', (req, res, next) => {
     Resume.getResume((err, resume) => {
         if (err) {
             res.json({ success: false, msg: 'Failed to get resume' });
