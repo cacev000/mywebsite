@@ -178,11 +178,13 @@ var HomeComponent = (function () {
         this.resumeData = [];
     }
     HomeComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.resumeService.getResumeData().subscribe(function (data) {
-            console.log(data.resume[0]);
-            _this.resumeData = data.resume[0];
-        });
+        setTimeout(function () {
+            var _this = this;
+            this.resumeService.getResumeData().subscribe(function (data) {
+                console.log(data.resume[0]);
+                _this.resumeData = data.resume[0];
+            });
+        }, 1000);
     };
     return HomeComponent;
 }());

@@ -12,11 +12,12 @@ export class HomeComponent implements OnInit {
   constructor(private resumeService: ResumeService) { }
 
   ngOnInit() {
-    this.resumeService.getResumeData().subscribe(data => {
-      console.log(data.resume[0]);
-      this.resumeData = data.resume[0];
-    });
-
+    setTimeout(function() {
+      this.resumeService.getResumeData().subscribe(data => {
+        console.log(data.resume[0]);
+        this.resumeData = data.resume[0];
+      });
+    }, 1000);
   }
 
 }
