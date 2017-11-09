@@ -1,93 +1,68 @@
-<div class="jumbotron text-center text-white" style="background: rgba(200, 200, 200, 0.7);">
-    <h1> MEAN Authentication App </h1>
-    <p class="lead"> Welcome to our custom MEAN authentication application built from scratch </p>
-    <div>
-        <a class="btn btn-primary" [routerLink]="['/register']">Register</a>
-        <a class="btn btn-default" [routerLink]="['/login']">Login</a>
+<div class="jumbotron text-white" style="background: rgba(200, 200, 200, 0.7);">
+    <div class="row justify-content-center" [style.textAlign]="'center'">
+        <h1>{{resumeData.firstName}} {{resumeData.middleName}} {{resumeData.lastName}}</h1>
     </div>
-</div>
+    <div class="row justify-content-between">
+        <h6>{{resumeData.address}}</h6>
+        <h6>Home: {{resumeData.houseNumber}}</h6>
+    </div>
+    <div class="row justify-content-between">
+        <h6>{{resumeData.city}}, {{resumeData.state}} 33177</h6>
+        <h6>Cell: {{resumeData.phoneNumber}}</h6>
+    </div>
+    <div class="row justify-content-between">
+        <h6>{{resumeData.country}}</h6>
+        <h6>{{resumeData.email}}</h6>
+    </div>
 
-<div class="jumbotron row text-white" style="background: rgba(200, 200, 200, 0.7);">
-    <div class="col-md-4">
-        <h3>Express Backend</h3>
-        <p> Arock solid Node.js/Express server using Mongoose to organize models and query the database</p>
+    <div class="row justify-content-center">
+        <h2>Computer Engineer</h2>
     </div>
-    <div class="col-md-4">
-        <h3>Angular-CLI</h3>
-        <p> Angular-CLI to generate components, services and more. Local dev server and easy compilation</p>
+
+    <div class="row justify-content-start">
+        <h5>SUMMARY OF QUALIFICATIONS</h5>
+        <p>{{resumeData.selfDescription}}</p>
     </div>
-    <div class="col-md-4">
-        <h3>JWT Tokens</h3>
-        <p> Full featured authentication using JSON web tokens. Login and store user data</p>
+
+    <div class="row justify-content-start">
+        <div class="column">
+            <h5>Technical Tools</h5>
+            <ul>
+                <li *ngFor="let skill of resumeData.skills">
+                    {{skill}}
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
-<div class="jumbotron row text-white" style="background: rgba(200, 200, 200, 0.7);">
-    <div class="col-md-4">
-        <h3>Express Backend</h3>
-        <p> Arock solid Node.js/Express server using Mongoose to organize models and query the database</p>
+
+    <div class="row justify-content-start">
+        <div class="column" [style.width]="'-webkit-fill-available'">
+            <h5>Profesional Experience</h5>
+            <div *ngFor="let experience of resumeData.experience">
+                <h6><u>{{experience.title}}</u></h6>
+                <div class="row">
+                    <div class="col-md-9 col-xs-12">
+                        <div [style.fontSize.px]="14">{{experience.description}} - {{experience.work}}. {{experience.city}}, {{experience.state}}</div>
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <div class="row" [style.marginLeft]="'inherit'" [style.fontSize.px]="14">
+                            <div>{{experience.startDate | date}}-</div>
+                            <div *ngIf="experience.isCurrentJob"> present</div>
+                            <div *ngIf="!experience.isCurrentJob">{{experience.endDate | date}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h3>Angular-CLI</h3>
-        <p> Angular-CLI to generate components, services and more. Local dev server and easy compilation</p>
-    </div>
-    <div class="col-md-4">
-        <h3>JWT Tokens</h3>
-        <p> Full featured authentication using JSON web tokens. Login and store user data</p>
-    </div>
-</div>
-<div class="jumbotron row text-white" style="background: rgba(200, 200, 200, 0.7);">
-    <div class="col-md-4">
-        <h3>Express Backend</h3>
-        <p> Arock solid Node.js/Express server using Mongoose to organize models and query the database</p>
-    </div>
-    <div class="col-md-4">
-        <h3>Angular-CLI</h3>
-        <p> Angular-CLI to generate components, services and more. Local dev server and easy compilation</p>
-    </div>
-    <div class="col-md-4">
-        <h3>JWT Tokens</h3>
-        <p> Full featured authentication using JSON web tokens. Login and store user data</p>
-    </div>
-</div>
-<div class="jumbotron row text-white" style="background: rgba(200, 200, 200, 0.7);">
-    <div class="col-md-4">
-        <h3>Express Backend</h3>
-        <p> Arock solid Node.js/Express server using Mongoose to organize models and query the database</p>
-    </div>
-    <div class="col-md-4">
-        <h3>Angular-CLI</h3>
-        <p> Angular-CLI to generate components, services and more. Local dev server and easy compilation</p>
-    </div>
-    <div class="col-md-4">
-        <h3>JWT Tokens</h3>
-        <p> Full featured authentication using JSON web tokens. Login and store user data</p>
-    </div>
-</div>
-<div class="jumbotron row text-white" style="background: rgba(200, 200, 200, 0.7);">
-    <div class="col-md-4">
-        <h3>Express Backend</h3>
-        <p> Arock solid Node.js/Express server using Mongoose to organize models and query the database</p>
-    </div>
-    <div class="col-md-4">
-        <h3>Angular-CLI</h3>
-        <p> Angular-CLI to generate components, services and more. Local dev server and easy compilation</p>
-    </div>
-    <div class="col-md-4">
-        <h3>JWT Tokens</h3>
-        <p> Full featured authentication using JSON web tokens. Login and store user data</p>
-    </div>
-</div>
-<div class="jumbotron row text-white" style="background: rgba(200, 200, 200, 0.7);">
-    <div class="col-md-4">
-        <h3>Express Backend</h3>
-        <p> Arock solid Node.js/Express server using Mongoose to organize models and query the database</p>
-    </div>
-    <div class="col-md-4">
-        <h3>Angular-CLI</h3>
-        <p> Angular-CLI to generate components, services and more. Local dev server and easy compilation</p>
-    </div>
-    <div class="col-md-4">
-        <h3>JWT Tokens</h3>
-        <p> Full featured authentication using JSON web tokens. Login and store user data</p>
+    <div class="row justify-content-start">
+        <div class="column">
+            <h5>Education</h5>
+            <ul>
+                <li *ngFor="let school of resumeData.studies">
+                    {{school.degreeType}} in {{school.major}} - {{school.universityName}}. {{school.city}}, {{school.state}}. {{school.graduationDay}}
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

@@ -3,7 +3,6 @@ const config = require('../config/database');
 
 // Resume Schema
 const ResumeSchema = mongoose.Schema({
-    dateOfBirth: Date,
     firstName: String,
     middleName: String,
     lastName: String,
@@ -14,7 +13,7 @@ const ResumeSchema = mongoose.Schema({
         universityName: String,
         city: String,
         state: String,
-        graduationDay: Date,
+        graduationDay: String,
         degreeType: String,
         major: String,
         minor: String
@@ -39,7 +38,7 @@ const ResumeSchema = mongoose.Schema({
     }],
     portfolio: [{
         website: String,
-        image: String,
+        images: [],
         briefDescription: String,
         techonology: []
     }]
@@ -48,10 +47,15 @@ const ResumeSchema = mongoose.Schema({
 const Resume = module.exports = mongoose.model('Resume', ResumeSchema);
 
 module.exports.getResume = function(id, callback) {
-    Resume.find({}, callback);
+    if (id === "") {
+        Resume.find({}, callback);
+    } else {
+        Resume.findById({ "_id": id }, callback);
+    }
 }
 
 module.exports.createResume = function(newResume, callback) {
+    console.dir("adding resume: " + newResume);
     newResume.save(callback);
 }
 
