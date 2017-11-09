@@ -10,15 +10,15 @@ export class HomeComponent implements OnInit {
   resumeData = [];
 
   constructor(private resumeService: ResumeService) {
+  }
+
+  ngOnInit() {
     this.resumeService.getResumeData().subscribe(data => {
       console.log(data.resume[0]);
       this.resumeData = data.resume[0];
     },
     err => {
-      return false;
+      return err;
     });
-  }
-
-  ngOnInit() {
   }
 }

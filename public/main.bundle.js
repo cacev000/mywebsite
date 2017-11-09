@@ -174,17 +174,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var HomeComponent = (function () {
     function HomeComponent(resumeService) {
-        var _this = this;
         this.resumeService = resumeService;
         this.resumeData = [];
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.resumeService.getResumeData().subscribe(function (data) {
             console.log(data.resume[0]);
             _this.resumeData = data.resume[0];
         }, function (err) {
-            return false;
+            return err;
         });
-    }
-    HomeComponent.prototype.ngOnInit = function () {
     };
     return HomeComponent;
 }());
