@@ -7,11 +7,12 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-
-import { ResumeService } from './services/resume.service';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+
+import { ResumeService } from './services/resume.service';
+import { ContactService } from './services/contact.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -33,7 +34,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule
   ],
-  providers: [ResumeService],
+  providers: [ResumeService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

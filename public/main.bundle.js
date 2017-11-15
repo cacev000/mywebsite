@@ -81,10 +81,11 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_resume_service__ = __webpack_require__("../../../../../src/app/services/resume.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_about_about_component__ = __webpack_require__("../../../../../src/app/components/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_portfolio_portfolio_component__ = __webpack_require__("../../../../../src/app/components/portfolio/portfolio.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_about_about_component__ = __webpack_require__("../../../../../src/app/components/about/about.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_portfolio_portfolio_component__ = __webpack_require__("../../../../../src/app/components/portfolio/portfolio.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_resume_service__ = __webpack_require__("../../../../../src/app/services/resume.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_contact_service__ = __webpack_require__("../../../../../src/app/services/contact.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -104,9 +105,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_7__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_10__components_contact_contact_component__["a" /* ContactComponent */] },
+    { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_9__components_contact_contact_component__["a" /* ContactComponent */] },
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -118,9 +120,9 @@ AppModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_7__components_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__components_about_about_component__["a" /* AboutComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_contact_contact_component__["a" /* ContactComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_portfolio_portfolio_component__["a" /* PortfolioComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__components_about_about_component__["a" /* AboutComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__components_contact_contact_component__["a" /* ContactComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__components_portfolio_portfolio_component__["a" /* PortfolioComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -129,7 +131,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(appRoutes),
             __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesModule"]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_8__services_resume_service__["a" /* ResumeService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_11__services_resume_service__["a" /* ResumeService */], __WEBPACK_IMPORTED_MODULE_12__services_contact_service__["a" /* ContactService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -229,7 +231,7 @@ module.exports = "<div class=\"fpc_box fpc_box-left\">\n    <div class=\"fpc_cor
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_resume_service__ = __webpack_require__("../../../../../src/app/services/resume.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_contact_service__ = __webpack_require__("../../../../../src/app/services/contact.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -245,17 +247,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ContactComponent = (function () {
-    function ContactComponent(resumeService, router) {
-        this.resumeService = resumeService;
+    function ContactComponent(contactService, router) {
+        this.contactService = contactService;
         this.router = router;
-        this.resumeData = [];
+        this.contactData = [];
     }
     ContactComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.resumeService.getResumeData()
+        this.contactService.getContactData()
             .subscribe(function (data) {
             console.log(data.resume[0]);
-            _this.resumeData = data.resume[0];
+            _this.contactData = data.resume[0];
         }, function (err) {
             return err;
         });
@@ -274,7 +276,7 @@ ContactComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/contact/contact.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/contact/contact.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_resume_service__["a" /* ResumeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_resume_service__["a" /* ResumeService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_contact_service__["a" /* ContactService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_contact_service__["a" /* ContactService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], ContactComponent);
 
 var _a, _b;
@@ -423,6 +425,51 @@ PortfolioComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/services/contact.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ContactService = (function () {
+    function ContactService(http) {
+        this.http = http;
+    }
+    ContactService.prototype.getContactData = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        // used in production
+        return this.http.get('http://localhost:3000/resume', { headers: headers }).map(function (res) { return res.json(); });
+        // used for heroku deployment
+        // return this.http.get('/resume', {headers: headers}).map(res => res.json());
+    };
+    return ContactService;
+}());
+ContactService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
+], ContactService);
+
+var _a;
+//# sourceMappingURL=contact.service.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/services/resume.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -452,9 +499,9 @@ var ResumeService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         // used in production
-        // return this.http.get('http://localhost:3000/resume', {headers: headers}).map(res => res.json());
+        return this.http.get('http://localhost:3000/resume', { headers: headers }).map(function (res) { return res.json(); });
         // used for heroku deployment
-        return this.http.get('/resume', { headers: headers }).map(function (res) { return res.json(); });
+        // return this.http.get('/resume', {headers: headers}).map(res => res.json());
     };
     return ResumeService;
 }());

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ResumeService } from '../../services/resume.service';
+import { ContactService } from '../../services/contact.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,18 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  resumeData = [];
+  contactData = [];
 
   constructor(
-    private resumeService: ResumeService,
+    private contactService: ContactService,
     private router: Router
   ) { }
 
   ngOnInit() {
-    this.resumeService.getResumeData()
+    this.contactService.getContactData()
     .subscribe(data => {
       console.log(data.resume[0]);
-      this.resumeData = data.resume[0];
+      this.contactData = data.resume[0];
     },
     err => {
       return err;

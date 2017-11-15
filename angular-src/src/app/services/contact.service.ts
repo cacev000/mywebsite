@@ -3,11 +3,11 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class ResumeService {
+export class ContactService {
 
   constructor(private http: Http) { }
 
-  getResumeData() {
+  getContactData() {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
