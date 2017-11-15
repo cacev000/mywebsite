@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.resumeService.getResumeData().subscribe(data => {
+    this.resumeService.getResumeData()
+    .subscribe(data => {
       console.log(data.resume[0]);
       this.resumeData = data.resume[0];
     },

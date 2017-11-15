@@ -9,15 +9,22 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { ResumeService } from './services/resume.service';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'contact', component: ContactComponent},
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    PortfolioComponent,
   ],
   imports: [
     BrowserModule,
