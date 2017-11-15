@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ResumeService } from '../../services/resume.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +10,10 @@ import { ResumeService } from '../../services/resume.service';
 export class HomeComponent implements OnInit {
   resumeData = [];
 
-  constructor(private resumeService: ResumeService) {
-  }
+  constructor(
+    private resumeService: ResumeService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.resumeService.getResumeData()
@@ -21,5 +24,9 @@ export class HomeComponent implements OnInit {
     err => {
       return err;
     });
+  }
+
+  goToContact() {
+    this.router.navigate(['/contact']);
   }
 }

@@ -220,7 +220,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/contact/contact.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"fpc_box fpc_box-left\">\n    <div class=\"fpc_corner-box-left hidden-md-down\">\n        <a class=\"fpc_page-tip-left\" href=\"/\">\n            <div class=\"fpc_corner-contents-left\">\n                <div class=\"fpc_corner-button-left\">Go back <strong>Home</strong></div>\n            </div>\n        </a>\n    </div>\n\n    <div class=\"jumbotron\">\n        Contact\n    </div>\n\n    <div class=\"fpc_corner-box hidden-md-down\">\n        <a class=\"fpc_page-tip\" href=\"/contact\">\n            <div class=\"fpc_corner-contents\">\n                <div class=\"fpc_corner-button\">Go to<strong>Contact Me</strong></div>\n            </div>\n        </a>\n    </div>\n</div>"
+module.exports = "<div class=\"fpc_box fpc_box-left\">\n    <div class=\"fpc_corner-box-left hidden-md-down\">\n        <div class=\"button fpc_page-tip-left\" (click)=\"goHome()\">\n            <div class=\"fpc_corner-contents-left\">\n                <div class=\"fpc_corner-button-left\">Go back <strong>Home</strong></div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"jumbotron\">\n        Contact\n    </div>\n\n    <div class=\"fpc_corner-box hidden-md-down\">\n        <div class=\"button fpc_page-tip\" (click)=\"goToContact()\">\n            <div class=\"fpc_corner-contents\">\n                <div class=\"fpc_corner-button\">Go to<strong>Contact Me</strong></div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -229,6 +229,8 @@ module.exports = "<div class=\"fpc_box fpc_box-left\">\n    <div class=\"fpc_cor
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_resume_service__ = __webpack_require__("../../../../../src/app/services/resume.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -240,10 +242,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var ContactComponent = (function () {
-    function ContactComponent() {
+    function ContactComponent(resumeService, router) {
+        this.resumeService = resumeService;
+        this.router = router;
+        this.resumeData = [];
     }
     ContactComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.resumeService.getResumeData()
+            .subscribe(function (data) {
+            console.log(data.resume[0]);
+            _this.resumeData = data.resume[0];
+        }, function (err) {
+            return err;
+        });
+    };
+    ContactComponent.prototype.goHome = function () {
+        this.router.navigate(['/']);
+    };
+    ContactComponent.prototype.goToContact = function () {
+        this.router.navigate(['/contact']);
     };
     return ContactComponent;
 }());
@@ -253,9 +274,10 @@ ContactComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/contact/contact.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/contact/contact.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_resume_service__["a" /* ResumeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_resume_service__["a" /* ResumeService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], ContactComponent);
 
+var _a, _b;
 //# sourceMappingURL=contact.component.js.map
 
 /***/ }),
@@ -281,7 +303,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"fpc_box\">\n    <div class=\"jumbotron\">\n        <div class=\"row justify-content-center\" [style.textAlign]=\"'center'\">\n            <h1>{{resumeData.firstName}} {{resumeData.middleName}} {{resumeData.lastName}}</h1>\n        </div>\n        <div class=\"column justify-content-start\">\n            <h6>Cell: {{resumeData.phoneNumber}}</h6>\n            <h6>{{resumeData.email}}</h6>\n        </div>\n        <div class=\"row justify-content-center\">\n            <h2>Computer Engineer</h2>\n        </div>\n\n        <div class=\"row justify-content-start\">\n            <h5>SUMMARY OF QUALIFICATIONS</h5>\n            <p>{{resumeData.selfDescription}}</p>\n        </div>\n\n        <div class=\"row justify-content-start\">\n            <div class=\"column\">\n                <h5>Technical Tools</h5>\n                <ul>\n                    <li *ngFor=\"let skill of resumeData.skills\">\n                        {{skill}}\n                    </li>\n                </ul>\n            </div>\n        </div>\n\n        <div class=\"row justify-content-start\">\n            <div class=\"column\" [style.width]=\"'-webkit-fill-available'\">\n                <h5>Profesional Experience</h5>\n                <div *ngFor=\"let experience of resumeData.experience\">\n                    <h6><u>{{experience.title}}</u></h6>\n                    <div class=\"row\">\n                        <div class=\"col-md-9 col-xs-12\">\n                            <div [style.fontSize.px]=\"14\">{{experience.description}} - {{experience.work}}. {{experience.city}}, {{experience.state}}</div>\n                        </div>\n                        <div class=\"col-md-3 col-xs-12\">\n                            <div class=\"row\" [style.marginLeft]=\"'inherit'\" [style.fontSize.px]=\"14\">\n                                <div>{{experience.startDate | date}}-</div>\n                                <div *ngIf=\"experience.isCurrentJob\"> present</div>\n                                <div *ngIf=\"!experience.isCurrentJob\">{{experience.endDate | date}}</div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"row justify-content-start\">\n            <div class=\"column\">\n                <h5>Education</h5>\n                <ul>\n                    <li *ngFor=\"let school of resumeData.studies\">\n                        {{school.degreeType}} in {{school.major}} - {{school.universityName}}. {{school.city}}, {{school.state}}. {{school.graduationDay}}\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"fpc_corner-box hidden-md-down\">\n        <a class=\"fpc_page-tip\" href=\"/contact\">\n            <div class=\"fpc_corner-contents\">\n                <div class=\"fpc_corner-button\">Go to<strong>Contact Me</strong></div>\n            </div>\n        </a>\n    </div>\n</div>"
+module.exports = "<div class=\"fpc_box\">\n    <div class=\"jumbotron\">\n        <div class=\"row justify-content-center\" [style.textAlign]=\"'center'\">\n            <h1>{{resumeData.firstName}} {{resumeData.middleName}} {{resumeData.lastName}}</h1>\n        </div>\n        <div class=\"column justify-content-start\">\n            <h6>Cell: {{resumeData.phoneNumber}}</h6>\n            <h6>{{resumeData.email}}</h6>\n        </div>\n        <div class=\"row justify-content-center\">\n            <h2>Computer Engineer</h2>\n        </div>\n\n        <div class=\"row justify-content-start\">\n            <h5>SUMMARY OF QUALIFICATIONS</h5>\n            <p>{{resumeData.selfDescription}}</p>\n        </div>\n\n        <div class=\"row justify-content-start\">\n            <div class=\"column\">\n                <h5>Technical Tools</h5>\n                <ul>\n                    <li *ngFor=\"let skill of resumeData.skills\">\n                        {{skill}}\n                    </li>\n                </ul>\n            </div>\n        </div>\n\n        <div class=\"row justify-content-start\">\n            <div class=\"column\" [style.width]=\"'-webkit-fill-available'\">\n                <h5>Profesional Experience</h5>\n                <div *ngFor=\"let experience of resumeData.experience\">\n                    <h6><u>{{experience.title}}</u></h6>\n                    <div class=\"row\">\n                        <div class=\"col-md-9 col-xs-12\">\n                            <div [style.fontSize.px]=\"14\">{{experience.description}} - {{experience.work}}. {{experience.city}}, {{experience.state}}</div>\n                        </div>\n                        <div class=\"col-md-3 col-xs-12\">\n                            <div class=\"row\" [style.marginLeft]=\"'inherit'\" [style.fontSize.px]=\"14\">\n                                <div>{{experience.startDate | date}}-</div>\n                                <div *ngIf=\"experience.isCurrentJob\"> present</div>\n                                <div *ngIf=\"!experience.isCurrentJob\">{{experience.endDate | date}}</div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"row justify-content-start\">\n            <div class=\"column\">\n                <h5>Education</h5>\n                <ul>\n                    <li *ngFor=\"let school of resumeData.studies\">\n                        {{school.degreeType}} in {{school.major}} - {{school.universityName}}. {{school.city}}, {{school.state}}. {{school.graduationDay}}\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"fpc_corner-box hidden-md-down\">\n        <div class=\"button fpc_page-tip\" (click)=\"goToContact()\">\n            <div class=\"fpc_corner-contents\">\n                <div class=\"fpc_corner-button\">Go to<strong>Contact Me</strong></div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -291,6 +313,7 @@ module.exports = "<div class=\"fpc_box\">\n    <div class=\"jumbotron\">\n      
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_resume_service__ = __webpack_require__("../../../../../src/app/services/resume.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -303,9 +326,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var HomeComponent = (function () {
-    function HomeComponent(resumeService) {
+    function HomeComponent(resumeService, router) {
         this.resumeService = resumeService;
+        this.router = router;
         this.resumeData = [];
     }
     HomeComponent.prototype.ngOnInit = function () {
@@ -318,6 +343,9 @@ var HomeComponent = (function () {
             return err;
         });
     };
+    HomeComponent.prototype.goToContact = function () {
+        this.router.navigate(['/contact']);
+    };
     return HomeComponent;
 }());
 HomeComponent = __decorate([
@@ -326,10 +354,10 @@ HomeComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/home/home.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/home/home.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_resume_service__["a" /* ResumeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_resume_service__["a" /* ResumeService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_resume_service__["a" /* ResumeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_resume_service__["a" /* ResumeService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], HomeComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=home.component.js.map
 
 /***/ }),
