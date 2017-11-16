@@ -33,8 +33,11 @@ export class ContactComponent implements OnInit {
     this.router.navigate(['/contact']);
   }
 
-  navigate() {
+  navigateToLinkedIn() {
     window.open('https://www.linkedin.com/in/carlosacevedo008');
+  }
+  navigateToGitHub() {
+    window.open('https://github.com/cacev000');
   }
 
 }

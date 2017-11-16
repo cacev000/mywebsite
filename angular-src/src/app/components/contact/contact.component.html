@@ -13,9 +13,11 @@
             <h6>Cell: {{contactData.phoneNumber}}</h6>
             <h6>{{contactData.email}}</h6>
         </div>
-
-        <button class="btn text-capitalize" (click)="navigate()" [style.backgroundColor]="'#283E4A'">
+        <button class="btn text-capitalize" (click)="navigateToLinkedIn()" [style.backgroundColor]="'#283E4A'" [style.cursor]="'pointer'">
             <img src="https://static.licdn.com/sc/h/95o6rrc5ws6mlw6wqzy0xgj7y" alt="">
+        </button>
+        <button class="btn text-capitalize" (click)="navigateToGitHub()" [style.cursor]="'pointer'">
+            <img width="75" src="https://1n3qgw368xwl1cx1o7p18wfg-wpengine.netdna-ssl.com/wp-content/uploads/2017/02/github-bb449e0ffbacbcb7f9c703db85b1cf0b.png" alt="">
         </button>
     </div>
 

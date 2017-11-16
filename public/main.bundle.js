@@ -225,7 +225,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/contact/contact.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-custom-navbar></app-custom-navbar>\n<div class=\"fpc_box fpc_box-left\">\n    <div class=\"fpc_corner-box-left hidden-md-down\">\n        <div class=\"button fpc_page-tip-left\" (click)=\"goHome()\">\n            <div class=\"fpc_corner-contents-left\">\n                <div class=\"fpc_corner-button-left\">Go back <strong>Home</strong></div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"jumbotron\">\n        <div class=\"column justify-content-start\">\n            <h6>Cell: {{contactData.phoneNumber}}</h6>\n            <h6>{{contactData.email}}</h6>\n        </div>\n\n        <button class=\"btn text-capitalize\" (click)=\"navigate()\" [style.backgroundColor]=\"'#283E4A'\">\n            <img src=\"https://static.licdn.com/sc/h/95o6rrc5ws6mlw6wqzy0xgj7y\" alt=\"\">\n        </button>\n    </div>\n\n    <!-- <div class=\"fpc_corner-box hidden-md-down\">\n        <div class=\"button fpc_page-tip\" (click)=\"goToContact()\">\n            <div class=\"fpc_corner-contents\">\n                <div class=\"fpc_corner-button\">Go to<strong>Contact Me</strong></div>\n            </div>\n        </div>\n    </div> -->\n</div>"
+module.exports = "<app-custom-navbar></app-custom-navbar>\n<div class=\"fpc_box fpc_box-left\">\n    <div class=\"fpc_corner-box-left hidden-md-down\">\n        <div class=\"button fpc_page-tip-left\" (click)=\"goHome()\">\n            <div class=\"fpc_corner-contents-left\">\n                <div class=\"fpc_corner-button-left\">Go back <strong>Home</strong></div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"jumbotron\">\n        <div class=\"column justify-content-start\">\n            <h6>Cell: {{contactData.phoneNumber}}</h6>\n            <h6>{{contactData.email}}</h6>\n        </div>\n        <button class=\"btn text-capitalize\" (click)=\"navigateToLinkedIn()\" [style.backgroundColor]=\"'#283E4A'\" [style.cursor]=\"'pointer'\">\n            <img src=\"https://static.licdn.com/sc/h/95o6rrc5ws6mlw6wqzy0xgj7y\" alt=\"\">\n        </button>\n        <button class=\"btn text-capitalize\" (click)=\"navigateToGitHub()\" [style.cursor]=\"'pointer'\">\n            <img width=\"75\" src=\"https://1n3qgw368xwl1cx1o7p18wfg-wpengine.netdna-ssl.com/wp-content/uploads/2017/02/github-bb449e0ffbacbcb7f9c703db85b1cf0b.png\" alt=\"\">\n        </button>\n    </div>\n\n    <!-- <div class=\"fpc_corner-box hidden-md-down\">\n        <div class=\"button fpc_page-tip\" (click)=\"goToContact()\">\n            <div class=\"fpc_corner-contents\">\n                <div class=\"fpc_corner-button\">Go to<strong>Contact Me</strong></div>\n            </div>\n        </div>\n    </div> -->\n</div>"
 
 /***/ }),
 
@@ -270,8 +270,11 @@ var ContactComponent = (function () {
     ContactComponent.prototype.goToContact = function () {
         this.router.navigate(['/contact']);
     };
-    ContactComponent.prototype.navigate = function () {
+    ContactComponent.prototype.navigateToLinkedIn = function () {
         window.open('https://www.linkedin.com/in/carlosacevedo008');
+    };
+    ContactComponent.prototype.navigateToGitHub = function () {
+        window.open('https://github.com/cacev000');
     };
     return ContactComponent;
 }());
