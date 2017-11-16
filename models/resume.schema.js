@@ -46,6 +46,14 @@ const ResumeSchema = mongoose.Schema({
 
 const Resume = module.exports = mongoose.model('Resume', ResumeSchema);
 
+module.exports.getContactData = function(callback) {
+    const projection = {
+        email: 1,
+        phoneNumber: 1,
+    }
+    Resume.find({}, projection, callback);
+}
+
 module.exports.getResume = function(callback) {
     Resume.find({}, callback);
 }

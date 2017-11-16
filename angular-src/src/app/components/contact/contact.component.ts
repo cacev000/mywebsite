@@ -18,7 +18,6 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
     this.contactService.getContactData()
     .subscribe(data => {
-      console.log(data.resume[0]);
       this.contactData = data.resume[0];
     },
     err => {
@@ -32,6 +31,10 @@ export class ContactComponent implements OnInit {
 
   goToContact() {
     this.router.navigate(['/contact']);
+  }
+
+  navigate() {
+    window.open('https://www.linkedin.com/in/carlosacevedo008');
   }
 
 }

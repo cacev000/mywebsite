@@ -9,8 +9,9 @@
     color: #900;
 }
 
-.navbar-bg {
-    background-color: #353535!important;
+.navbar-bg:hover {
+    /* background-color: #353535!important; */
+    background-color: #313131!important;
 }
 
 @media only screen and (min-width: 1024px) {

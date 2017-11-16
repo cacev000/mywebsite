@@ -225,7 +225,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/contact/contact.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-custom-navbar></app-custom-navbar>\n<div class=\"fpc_box fpc_box-left\">\n    <div class=\"fpc_corner-box-left hidden-md-down\">\n        <div class=\"button fpc_page-tip-left\" (click)=\"goHome()\">\n            <div class=\"fpc_corner-contents-left\">\n                <div class=\"fpc_corner-button-left\">Go back <strong>Home</strong></div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"jumbotron\">\n        Contact\n    </div>\n\n    <div class=\"fpc_corner-box hidden-md-down\">\n        <div class=\"button fpc_page-tip\" (click)=\"goToContact()\">\n            <div class=\"fpc_corner-contents\">\n                <div class=\"fpc_corner-button\">Go to<strong>Contact Me</strong></div>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<app-custom-navbar></app-custom-navbar>\n<div class=\"fpc_box fpc_box-left\">\n    <div class=\"fpc_corner-box-left hidden-md-down\">\n        <div class=\"button fpc_page-tip-left\" (click)=\"goHome()\">\n            <div class=\"fpc_corner-contents-left\">\n                <div class=\"fpc_corner-button-left\">Go back <strong>Home</strong></div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"jumbotron\">\n        <div class=\"column justify-content-start\">\n            <h6>Cell: {{contactData.phoneNumber}}</h6>\n            <h6>{{contactData.email}}</h6>\n        </div>\n\n        <button class=\"btn text-capitalize\" (click)=\"navigate()\" [style.backgroundColor]=\"'#283E4A'\">\n            <img src=\"https://static.licdn.com/sc/h/95o6rrc5ws6mlw6wqzy0xgj7y\" alt=\"\">\n        </button>\n    </div>\n\n    <div class=\"fpc_corner-box hidden-md-down\">\n        <div class=\"button fpc_page-tip\" (click)=\"goToContact()\">\n            <div class=\"fpc_corner-contents\">\n                <div class=\"fpc_corner-button\">Go to<strong>Contact Me</strong></div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -259,7 +259,6 @@ var ContactComponent = (function () {
         var _this = this;
         this.contactService.getContactData()
             .subscribe(function (data) {
-            console.log(data.resume[0]);
             _this.contactData = data.resume[0];
         }, function (err) {
             return err;
@@ -270,6 +269,9 @@ var ContactComponent = (function () {
     };
     ContactComponent.prototype.goToContact = function () {
         this.router.navigate(['/contact']);
+    };
+    ContactComponent.prototype.navigate = function () {
+        window.open('https://www.linkedin.com/in/carlosacevedo008');
     };
     return ContactComponent;
 }());
@@ -308,7 +310,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/custom-navbar/custom-navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"pos-f-t\">\n    <nav class=\"navbar navbar-inverse navbar-bg\">\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarToggleExternalContent\" aria-controls=\"navbarToggleExternalContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n    </nav>\n    <div class=\"collapse navbar-collapse-style\" id=\"navbarToggleExternalContent\">\n        <div class=\"navbar-bg text-white row\">\n            <h2 class=\"col-12\" [style.textAlign]=\"'center'\" [routerLink]=\"['/']\" [routerLinkActive]=\"'isActive'\" [routerLinkActiveOptions]=\"{exact:true}\" [style.cursor]=\"'pointer'\">\n                Home\n            </h2>\n        </div>\n        <div class=\"navbar-bg text-white row\">\n            <h2 class=\"col-12\" [style.textAlign]=\"'center'\" [routerLink]=\"['/contact']\" [routerLinkActive]=\"'isActive'\" [routerLinkActiveOptions]=\"{exact:true}\" [style.cursor]=\"'pointer'\">\n                Contact\n            </h2>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"pos-f-t\">\n    <nav class=\"navbar navbar-inverse\">\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarToggleExternalContent\" aria-controls=\"navbarToggleExternalContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n    </nav>\n    <div class=\"collapse navbar-collapse-style\" id=\"navbarToggleExternalContent\">\n        <div class=\"navbar-bg text-white row\">\n            <h2 class=\"col-12\" [style.outlineColor]=\"'#353535'\" [style.textAlign]=\"'center'\" [routerLink]=\"['/']\" [routerLinkActive]=\"'isActive'\" [routerLinkActiveOptions]=\"{exact:true}\" [style.cursor]=\"'pointer'\">\n                Home\n            </h2>\n        </div>\n        <div class=\"navbar-bg text-white row\">\n            <h2 class=\"col-12\" [style.outlineColor]=\"'#353535'\" [style.textAlign]=\"'center'\" [routerLink]=\"['/contact']\" [routerLinkActive]=\"'isActive'\" [routerLinkActiveOptions]=\"{exact:true}\" [style.cursor]=\"'pointer'\">\n                Contact\n            </h2>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -403,7 +405,6 @@ var HomeComponent = (function () {
         var _this = this;
         this.resumeService.getResumeData()
             .subscribe(function (data) {
-            console.log(data.resume[0]);
             _this.resumeData = data.resume[0];
         }, function (err) {
             return err;
@@ -518,9 +519,9 @@ var ContactService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         // used in production
-        // return this.http.get('http://localhost:3000/resume', {headers: headers}).map(res => res.json());
+        return this.http.get('http://localhost:3000/resumeContact', { headers: headers }).map(function (res) { return res.json(); });
         // used for heroku deployment
-        return this.http.get('/resume', { headers: headers }).map(function (res) { return res.json(); });
+        // return this.http.get('/resumeContact', {headers: headers}).map(res => res.json());
     };
     return ContactService;
 }());
@@ -563,9 +564,9 @@ var ResumeService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         // used in production
-        // return this.http.get('http://localhost:3000/resume', {headers: headers}).map(res => res.json());
+        return this.http.get('http://localhost:3000/resume', { headers: headers }).map(function (res) { return res.json(); });
         // used for heroku deployment
-        return this.http.get('/resume', { headers: headers }).map(function (res) { return res.json(); });
+        // return this.http.get('/resume', {headers: headers}).map(res => res.json());
     };
     return ResumeService;
 }());

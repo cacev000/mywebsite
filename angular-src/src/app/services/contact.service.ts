@@ -12,9 +12,9 @@ export class ContactService {
     headers.append('Content-Type', 'application/json');
 
     // used in production
-    // return this.http.get('http://localhost:3000/resume', {headers: headers}).map(res => res.json());
+    return this.http.get('http://localhost:3000/resumeContact', {headers: headers}).map(res => res.json());
     // used for heroku deployment
-    return this.http.get('/resume', {headers: headers}).map(res => res.json());
+    // return this.http.get('/resumeContact', {headers: headers}).map(res => res.json());
   }
 
 }

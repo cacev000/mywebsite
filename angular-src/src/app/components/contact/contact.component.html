@@ -9,7 +9,14 @@
     </div>
 
     <div class="jumbotron">
-        Contact
+        <div class="column justify-content-start">
+            <h6>Cell: {{contactData.phoneNumber}}</h6>
+            <h6>{{contactData.email}}</h6>
+        </div>
+
+        <button class="btn text-capitalize" (click)="navigate()" [style.backgroundColor]="'#283E4A'">
+            <img src="https://static.licdn.com/sc/h/95o6rrc5ws6mlw6wqzy0xgj7y" alt="">
+        </button>
     </div>
 
     <div class="fpc_corner-box hidden-md-down">
