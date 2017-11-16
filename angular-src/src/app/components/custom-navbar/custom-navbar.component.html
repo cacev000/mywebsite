@@ -1,0 +1,19 @@
+<div class="pos-f-t">
+    <nav class="navbar navbar-inverse navbar-bg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="collapse navbar-collapse-style" id="navbarToggleExternalContent">
+        <div class="navbar-bg text-white row">
+            <h2 class="col-12" [style.textAlign]="'center'" [routerLink]="['/']" [routerLinkActive]="'isActive'" [routerLinkActiveOptions]="{exact:true}" [style.cursor]="'pointer'">
+                Home
+            </h2>
+        </div>
+        <div class="navbar-bg text-white row">
+            <h2 class="col-12" [style.textAlign]="'center'" [routerLink]="['/contact']" [routerLinkActive]="'isActive'" [routerLinkActiveOptions]="{exact:true}" [style.cursor]="'pointer'">
+                Contact
+            </h2>
+        </div>
+    </div>
+</div>

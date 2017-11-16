@@ -5,6 +5,14 @@
     background-image: URL("./assets/gallery/page_background.jpg");
 } */
 
+.isActive {
+    color: #900;
+}
+
+.navbar-bg {
+    background-color: #353535!important;
+}
+
 @media only screen and (min-width: 1024px) {
     /* RIGHT CORNER */
     .fpc_box {
@@ -116,6 +124,7 @@
         top: 0;
         right: 0;
         height: 125%;
+        cursor: pointer;
     }
     .fpc_corner-contents:before {
         content: "";
@@ -263,6 +272,7 @@
         top: 0;
         left: 0;
         height: 125%;
+        cursor: pointer;
     }
     .fpc_corner-contents-left:before {
         content: "";

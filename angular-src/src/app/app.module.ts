@@ -13,6 +13,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 import { ResumeService } from './services/resume.service';
 import { ContactService } from './services/contact.service';
+import { CustomNavbarComponent } from './components/custom-navbar/custom-navbar.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
     AboutComponent,
     ContactComponent,
     PortfolioComponent,
+    CustomNavbarComponent,
   ],
   imports: [
     BrowserModule,
