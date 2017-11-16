@@ -519,9 +519,9 @@ var ContactService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         // used in production
-        return this.http.get('http://localhost:3000/resumeContact', { headers: headers }).map(function (res) { return res.json(); });
+        // return this.http.get('http://localhost:3000/resumeContact', {headers: headers}).map(res => res.json());
         // used for heroku deployment
-        // return this.http.get('/resumeContact', {headers: headers}).map(res => res.json());
+        return this.http.get('/resumeContact', { headers: headers }).map(function (res) { return res.json(); });
     };
     return ContactService;
 }());
@@ -564,9 +564,9 @@ var ResumeService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
         headers.append('Content-Type', 'application/json');
         // used in production
-        return this.http.get('http://localhost:3000/resume', { headers: headers }).map(function (res) { return res.json(); });
+        // return this.http.get('http://localhost:3000/resume', {headers: headers}).map(res => res.json());
         // used for heroku deployment
-        // return this.http.get('/resume', {headers: headers}).map(res => res.json());
+        return this.http.get('/resume', { headers: headers }).map(function (res) { return res.json(); });
     };
     return ResumeService;
 }());
