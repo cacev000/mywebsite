@@ -1,31 +1,24 @@
 <app-custom-navbar></app-custom-navbar>
 <div class="fpc_box fpc_box-left">
     <div class="fpc_corner-box-left hidden-md-down">
-        <div class="button fpc_page-tip-left" (click)="goHome()">
+        <div class="button fpc_page-tip-left" (click)="goToPortfolio()">
             <div class="fpc_corner-contents-left">
-                <div class="fpc_corner-button-left">Go back <strong>Home</strong></div>
+                <div class="fpc_corner-button-left">Check out my<strong>Portfolio</strong></div>
             </div>
         </div>
     </div>
 
     <div class="jumbotron">
-        <div class="column justify-content-start">
-            <h6>Cell: {{contactData.phoneNumber}}</h6>
-            <h6>{{contactData.email}}</h6>
+        <div class="row justify-content-center" [style.marginBottom.px]="20">
+            If you would like to know more about me and any of the projects, feel free to message me through email: <b> {{contactData.email}}</b> or contact me through the links below.
         </div>
-        <button class="btn text-capitalize" (click)="navigateToLinkedIn()" [style.backgroundColor]="'#283E4A'" [style.cursor]="'pointer'">
-            <img src="https://static.licdn.com/sc/h/95o6rrc5ws6mlw6wqzy0xgj7y" alt="">
-        </button>
-        <button class="btn text-capitalize" (click)="navigateToGitHub()" [style.cursor]="'pointer'">
-            <img width="75" src="https://1n3qgw368xwl1cx1o7p18wfg-wpengine.netdna-ssl.com/wp-content/uploads/2017/02/github-bb449e0ffbacbcb7f9c703db85b1cf0b.png" alt="">
-        </button>
+        <div class="row justify-content-center">
+            <button class="btn text-capitalize" (click)="navigateToLinkedIn()" [style.backgroundColor]="'#283E4A'" [style.cursor]="'pointer'">
+                <img src="https://static.licdn.com/sc/h/95o6rrc5ws6mlw6wqzy0xgj7y" alt="">
+            </button>
+            <button class="btn text-capitalize" (click)="navigateToGitHub()" [style.cursor]="'pointer'">
+                <img width="75" src="https://1n3qgw368xwl1cx1o7p18wfg-wpengine.netdna-ssl.com/wp-content/uploads/2017/02/github-bb449e0ffbacbcb7f9c703db85b1cf0b.png" alt="">
+            </button>
+        </div>
     </div>
-
-    <!-- <div class="fpc_corner-box hidden-md-down">
-        <div class="button fpc_page-tip" (click)="goToContact()">
-            <div class="fpc_corner-contents">
-                <div class="fpc_corner-button">Go to<strong>Contact Me</strong></div>
-            </div>
-        </div>
-    </div> -->
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ResumeService } from '../../services/resume.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private resumeService: ResumeService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  goToHome() {
+    this.router.navigate(['/']);
+  }
+
+  goToContact() {
+    this.router.navigate(['/contact']);
   }
 
 }

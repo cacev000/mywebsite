@@ -1,21 +1,27 @@
 <app-custom-navbar></app-custom-navbar>
 <div class="fpc_box">
     <div class="jumbotron">
-        <div class="row justify-content-center" [style.textAlign]="'center'">
-            <h1>{{resumeData.firstName}} {{resumeData.middleName}} {{resumeData.lastName}}</h1>
+        <div class="row justify-content-start">
+            Welcome, here you will find some information about myself.
+            <!-- <h1>{{resumeData.firstName}} {{resumeData.middleName}} {{resumeData.lastName}}</h1> -->
         </div>
-        <div class="column justify-content-start">
-            <h6>Cell: {{resumeData.phoneNumber}}</h6>
-            <h6>{{resumeData.email}}</h6>
+        <div class="row justify-content-start">
+            I have been a Software Engineer for 2+ years. As a software engineer i have been able to understand the customer's vision (UI/UX).
         </div>
-        <div class="row justify-content-center">
-            <h2>Computer Engineer</h2>
+        <div class="row justify-content-start">
+            In addition, collaborating with other departments has improved my communication skills, design skills and implementation of new features that will help improve quality and productivity for the teams and departments.
+        </div>
+        <div class="row justify-content-start">
+            From those 2 years, I have worked for 1 year as a Full stack developer which has been one of the most challenging goals.
+        </div>
+        <div class="row justify-content-start">
+            One of the challenges that has made me grow as a developer is creating dynamic web applications.
         </div>
 
-        <div class="row justify-content-start">
+        <!-- <div class="row justify-content-start">
             <h5>SUMMARY OF QUALIFICATIONS</h5>
             <p>{{resumeData.selfDescription}}</p>
-        </div>
+        </div> -->
 
         <div class="row justify-content-start">
             <div class="column">
@@ -27,43 +33,12 @@
                 </ul>
             </div>
         </div>
-
-        <div class="row justify-content-start">
-            <div class="column" [style.width]="'-webkit-fill-available'">
-                <h5>Profesional Experience</h5>
-                <div *ngFor="let experience of resumeData.experience">
-                    <h6><u>{{experience.title}}</u></h6>
-                    <div class="row">
-                        <div class="col-md-9 col-xs-12">
-                            <div [style.fontSize.px]="14">{{experience.description}} - {{experience.work}}. {{experience.city}}, {{experience.state}}</div>
-                        </div>
-                        <div class="col-md-3 col-xs-12">
-                            <div class="row" [style.marginLeft]="'inherit'" [style.fontSize.px]="14">
-                                <div>{{experience.startDate | date}}-</div>
-                                <div *ngIf="experience.isCurrentJob"> present</div>
-                                <div *ngIf="!experience.isCurrentJob">{{experience.endDate | date}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-start">
-            <div class="column">
-                <h5>Education</h5>
-                <ul>
-                    <li *ngFor="let school of resumeData.studies">
-                        {{school.degreeType}} in {{school.major}} - {{school.universityName}}. {{school.city}}, {{school.state}}. {{school.graduationDay}}
-                    </li>
-                </ul>
-            </div>
-        </div>
     </div>
 
     <div class="fpc_corner-box hidden-md-down">
-        <div class="button fpc_page-tip" (click)="goToContact()">
+        <div class="button fpc_page-tip" (click)="goToPortfolio()">
             <div class="fpc_corner-contents">
-                <div class="fpc_corner-button">Go to<strong>Contact Me</strong></div>
+                <div class="fpc_corner-button">Check out my<strong>Portfolio</strong></div>
             </div>
         </div>
     </div>

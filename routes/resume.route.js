@@ -28,17 +28,6 @@ router.get('/resume', (req, res, next) => {
     });
 });
 
-router.get('/resumeContact', (req, res, next) => {
-    Resume.getContactData((err, resume) => {
-        if (err) {
-            res.json({ success: false, msg: 'Failed to get resume' });
-        } else {
-            console.log(resume);
-            res.json({ resume: resume });
-        }
-    });
-});
-
 router.post('/createResume', (req, res, next) => {
     let newResume = new Resume({
         firstName: req.body.firstName,

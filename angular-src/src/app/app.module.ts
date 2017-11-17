@@ -7,24 +7,24 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 import { ResumeService } from './services/resume.service';
 import { ContactService } from './services/contact.service';
+import { PortfolioService } from './services/portfolio.service';
 import { CustomNavbarComponent } from './components/custom-navbar/custom-navbar.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'contact', component: ContactComponent},
+  {path: 'portfolio', component: PortfolioComponent},
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
     ContactComponent,
     PortfolioComponent,
     CustomNavbarComponent,
@@ -36,7 +36,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule
   ],
-  providers: [ResumeService, ContactService],
+  providers: [ResumeService, ContactService, PortfolioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

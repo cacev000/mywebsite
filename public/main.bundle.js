@@ -81,11 +81,11 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_about_about_component__ = __webpack_require__("../../../../../src/app/components/about/about.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_portfolio_portfolio_component__ = __webpack_require__("../../../../../src/app/components/portfolio/portfolio.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_resume_service__ = __webpack_require__("../../../../../src/app/services/resume.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_contact_service__ = __webpack_require__("../../../../../src/app/services/contact.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_portfolio_portfolio_component__ = __webpack_require__("../../../../../src/app/components/portfolio/portfolio.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_resume_service__ = __webpack_require__("../../../../../src/app/services/resume.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_contact_service__ = __webpack_require__("../../../../../src/app/services/contact.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_portfolio_service__ = __webpack_require__("../../../../../src/app/services/portfolio.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_custom_navbar_custom_navbar_component__ = __webpack_require__("../../../../../src/app/components/custom-navbar/custom-navbar.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -110,7 +110,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_7__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_9__components_contact_contact_component__["a" /* ContactComponent */] },
+    { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_8__components_contact_contact_component__["a" /* ContactComponent */] },
+    { path: 'portfolio', component: __WEBPACK_IMPORTED_MODULE_9__components_portfolio_portfolio_component__["a" /* PortfolioComponent */] },
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -122,9 +123,8 @@ AppModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_7__components_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__components_about_about_component__["a" /* AboutComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__components_contact_contact_component__["a" /* ContactComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_portfolio_portfolio_component__["a" /* PortfolioComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__components_contact_contact_component__["a" /* ContactComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__components_portfolio_portfolio_component__["a" /* PortfolioComponent */],
             __WEBPACK_IMPORTED_MODULE_13__components_custom_navbar_custom_navbar_component__["a" /* CustomNavbarComponent */],
         ],
         imports: [
@@ -134,73 +134,12 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(appRoutes),
             __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesModule"]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_11__services_resume_service__["a" /* ResumeService */], __WEBPACK_IMPORTED_MODULE_12__services_contact_service__["a" /* ContactService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_10__services_resume_service__["a" /* ResumeService */], __WEBPACK_IMPORTED_MODULE_11__services_contact_service__["a" /* ContactService */], __WEBPACK_IMPORTED_MODULE_12__services_portfolio_service__["a" /* PortfolioService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/about/about.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/about/about.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  about works!\n</p>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/about/about.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var AboutComponent = (function () {
-    function AboutComponent() {
-    }
-    AboutComponent.prototype.ngOnInit = function () {
-    };
-    return AboutComponent;
-}());
-AboutComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-about',
-        template: __webpack_require__("../../../../../src/app/components/about/about.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/about/about.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], AboutComponent);
-
-//# sourceMappingURL=about.component.js.map
 
 /***/ }),
 
@@ -225,7 +164,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/contact/contact.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-custom-navbar></app-custom-navbar>\n<div class=\"fpc_box fpc_box-left\">\n    <div class=\"fpc_corner-box-left hidden-md-down\">\n        <div class=\"button fpc_page-tip-left\" (click)=\"goHome()\">\n            <div class=\"fpc_corner-contents-left\">\n                <div class=\"fpc_corner-button-left\">Go back <strong>Home</strong></div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"jumbotron\">\n        <div class=\"column justify-content-start\">\n            <h6>Cell: {{contactData.phoneNumber}}</h6>\n            <h6>{{contactData.email}}</h6>\n        </div>\n        <button class=\"btn text-capitalize\" (click)=\"navigateToLinkedIn()\" [style.backgroundColor]=\"'#283E4A'\" [style.cursor]=\"'pointer'\">\n            <img src=\"https://static.licdn.com/sc/h/95o6rrc5ws6mlw6wqzy0xgj7y\" alt=\"\">\n        </button>\n        <button class=\"btn text-capitalize\" (click)=\"navigateToGitHub()\" [style.cursor]=\"'pointer'\">\n            <img width=\"75\" src=\"https://1n3qgw368xwl1cx1o7p18wfg-wpengine.netdna-ssl.com/wp-content/uploads/2017/02/github-bb449e0ffbacbcb7f9c703db85b1cf0b.png\" alt=\"\">\n        </button>\n    </div>\n\n    <!-- <div class=\"fpc_corner-box hidden-md-down\">\n        <div class=\"button fpc_page-tip\" (click)=\"goToContact()\">\n            <div class=\"fpc_corner-contents\">\n                <div class=\"fpc_corner-button\">Go to<strong>Contact Me</strong></div>\n            </div>\n        </div>\n    </div> -->\n</div>"
+module.exports = "<app-custom-navbar></app-custom-navbar>\n<div class=\"fpc_box fpc_box-left\">\n    <div class=\"fpc_corner-box-left hidden-md-down\">\n        <div class=\"button fpc_page-tip-left\" (click)=\"goToPortfolio()\">\n            <div class=\"fpc_corner-contents-left\">\n                <div class=\"fpc_corner-button-left\">Check out my<strong>Portfolio</strong></div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"jumbotron\">\n        <div class=\"row justify-content-center\" [style.marginBottom.px]=\"20\">\n            If you would like to know more about me and any of the projects, feel free to message me through email: <b> {{contactData.email}}</b> or contact me through the links below.\n        </div>\n        <div class=\"row justify-content-center\">\n            <button class=\"btn text-capitalize\" (click)=\"navigateToLinkedIn()\" [style.backgroundColor]=\"'#283E4A'\" [style.cursor]=\"'pointer'\">\n                <img src=\"https://static.licdn.com/sc/h/95o6rrc5ws6mlw6wqzy0xgj7y\" alt=\"\">\n            </button>\n            <button class=\"btn text-capitalize\" (click)=\"navigateToGitHub()\" [style.cursor]=\"'pointer'\">\n                <img width=\"75\" src=\"https://1n3qgw368xwl1cx1o7p18wfg-wpengine.netdna-ssl.com/wp-content/uploads/2017/02/github-bb449e0ffbacbcb7f9c703db85b1cf0b.png\" alt=\"\">\n            </button>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -264,11 +203,8 @@ var ContactComponent = (function () {
             return err;
         });
     };
-    ContactComponent.prototype.goHome = function () {
-        this.router.navigate(['/']);
-    };
-    ContactComponent.prototype.goToContact = function () {
-        this.router.navigate(['/contact']);
+    ContactComponent.prototype.goToPortfolio = function () {
+        this.router.navigate(['/portfolio']);
     };
     ContactComponent.prototype.navigateToLinkedIn = function () {
         window.open('https://www.linkedin.com/in/carlosacevedo008');
@@ -313,7 +249,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/custom-navbar/custom-navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"pos-f-t\">\n    <nav class=\"navbar navbar-inverse\">\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarToggleExternalContent\" aria-controls=\"navbarToggleExternalContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n    </nav>\n    <div class=\"collapse navbar-collapse-style\" id=\"navbarToggleExternalContent\">\n        <div class=\"navbar-bg text-white row\">\n            <h2 class=\"col-12\" [style.outlineColor]=\"'#353535'\" [style.textAlign]=\"'center'\" [routerLink]=\"['/']\" [routerLinkActive]=\"'isActive'\" [routerLinkActiveOptions]=\"{exact:true}\" [style.cursor]=\"'pointer'\">\n                Home\n            </h2>\n        </div>\n        <div class=\"navbar-bg text-white row\">\n            <h2 class=\"col-12\" [style.outlineColor]=\"'#353535'\" [style.textAlign]=\"'center'\" [routerLink]=\"['/contact']\" [routerLinkActive]=\"'isActive'\" [routerLinkActiveOptions]=\"{exact:true}\" [style.cursor]=\"'pointer'\">\n                Contact\n            </h2>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"pos-f-t\">\n    <nav class=\"navbar navbar-inverse\">\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarToggleExternalContent\" aria-controls=\"navbarToggleExternalContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n    </nav>\n    <div class=\"collapse navbar-collapse-style\" id=\"navbarToggleExternalContent\">\n        <div class=\"navbar-bg text-white row\">\n            <h2 class=\"col-12\" [style.outlineColor]=\"'#353535'\" [style.textAlign]=\"'center'\" [routerLink]=\"['/']\" [routerLinkActive]=\"'isActive'\" [routerLinkActiveOptions]=\"{exact:true}\" [style.cursor]=\"'pointer'\">\n                Home\n            </h2>\n        </div>\n        <div class=\"navbar-bg text-white row\">\n            <h2 class=\"col-12\" [style.outlineColor]=\"'#353535'\" [style.textAlign]=\"'center'\" [routerLink]=\"['/portfolio']\" [routerLinkActive]=\"'isActive'\" [routerLinkActiveOptions]=\"{exact:true}\" [style.cursor]=\"'pointer'\">\n                Portfolio\n            </h2>\n        </div>\n        <div class=\"navbar-bg text-white row\">\n            <h2 class=\"col-12\" [style.outlineColor]=\"'#353535'\" [style.textAlign]=\"'center'\" [routerLink]=\"['/contact']\" [routerLinkActive]=\"'isActive'\" [routerLinkActiveOptions]=\"{exact:true}\" [style.cursor]=\"'pointer'\">\n                Contact\n            </h2>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -374,7 +310,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-custom-navbar></app-custom-navbar>\n<div class=\"fpc_box\">\n    <div class=\"jumbotron\">\n        <div class=\"row justify-content-center\" [style.textAlign]=\"'center'\">\n            <h1>{{resumeData.firstName}} {{resumeData.middleName}} {{resumeData.lastName}}</h1>\n        </div>\n        <div class=\"column justify-content-start\">\n            <h6>Cell: {{resumeData.phoneNumber}}</h6>\n            <h6>{{resumeData.email}}</h6>\n        </div>\n        <div class=\"row justify-content-center\">\n            <h2>Computer Engineer</h2>\n        </div>\n\n        <div class=\"row justify-content-start\">\n            <h5>SUMMARY OF QUALIFICATIONS</h5>\n            <p>{{resumeData.selfDescription}}</p>\n        </div>\n\n        <div class=\"row justify-content-start\">\n            <div class=\"column\">\n                <h5>Technical Tools</h5>\n                <ul>\n                    <li *ngFor=\"let skill of resumeData.skills\">\n                        {{skill}}\n                    </li>\n                </ul>\n            </div>\n        </div>\n\n        <div class=\"row justify-content-start\">\n            <div class=\"column\" [style.width]=\"'-webkit-fill-available'\">\n                <h5>Profesional Experience</h5>\n                <div *ngFor=\"let experience of resumeData.experience\">\n                    <h6><u>{{experience.title}}</u></h6>\n                    <div class=\"row\">\n                        <div class=\"col-md-9 col-xs-12\">\n                            <div [style.fontSize.px]=\"14\">{{experience.description}} - {{experience.work}}. {{experience.city}}, {{experience.state}}</div>\n                        </div>\n                        <div class=\"col-md-3 col-xs-12\">\n                            <div class=\"row\" [style.marginLeft]=\"'inherit'\" [style.fontSize.px]=\"14\">\n                                <div>{{experience.startDate | date}}-</div>\n                                <div *ngIf=\"experience.isCurrentJob\"> present</div>\n                                <div *ngIf=\"!experience.isCurrentJob\">{{experience.endDate | date}}</div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"row justify-content-start\">\n            <div class=\"column\">\n                <h5>Education</h5>\n                <ul>\n                    <li *ngFor=\"let school of resumeData.studies\">\n                        {{school.degreeType}} in {{school.major}} - {{school.universityName}}. {{school.city}}, {{school.state}}. {{school.graduationDay}}\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"fpc_corner-box hidden-md-down\">\n        <div class=\"button fpc_page-tip\" (click)=\"goToContact()\">\n            <div class=\"fpc_corner-contents\">\n                <div class=\"fpc_corner-button\">Go to<strong>Contact Me</strong></div>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<app-custom-navbar></app-custom-navbar>\n<div class=\"fpc_box\">\n    <div class=\"jumbotron\">\n        <div class=\"row justify-content-start\">\n            Welcome, here you will find some information about myself.\n            <!-- <h1>{{resumeData.firstName}} {{resumeData.middleName}} {{resumeData.lastName}}</h1> -->\n        </div>\n        <div class=\"row justify-content-start\">\n            I have been a Software Engineer for 2+ years. As a software engineer i have been able to understand the customer's vision (UI/UX).\n        </div>\n        <div class=\"row justify-content-start\">\n            In addition, collaborating with other departments has improved my communication skills, design skills and implementation of new features that will help improve quality and productivity for the teams and departments.\n        </div>\n        <div class=\"row justify-content-start\">\n            From those 2 years, I have worked for 1 year as a Full stack developer which has been one of the most challenging goals.\n        </div>\n        <div class=\"row justify-content-start\">\n            One of the challenges that has made me grow as a developer is creating dynamic web applications.\n        </div>\n\n        <!-- <div class=\"row justify-content-start\">\n            <h5>SUMMARY OF QUALIFICATIONS</h5>\n            <p>{{resumeData.selfDescription}}</p>\n        </div> -->\n\n        <div class=\"row justify-content-start\">\n            <div class=\"column\">\n                <h5>Technical Tools</h5>\n                <ul>\n                    <li *ngFor=\"let skill of resumeData.skills\">\n                        {{skill}}\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"fpc_corner-box hidden-md-down\">\n        <div class=\"button fpc_page-tip\" (click)=\"goToPortfolio()\">\n            <div class=\"fpc_corner-contents\">\n                <div class=\"fpc_corner-button\">Check out my<strong>Portfolio</strong></div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -413,8 +349,8 @@ var HomeComponent = (function () {
             return err;
         });
     };
-    HomeComponent.prototype.goToContact = function () {
-        this.router.navigate(['/contact']);
+    HomeComponent.prototype.goToPortfolio = function () {
+        this.router.navigate(['/portfolio']);
     };
     return HomeComponent;
 }());
@@ -453,7 +389,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/portfolio/portfolio.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  portfolio works!\n</p>\n"
+module.exports = "<app-custom-navbar></app-custom-navbar>\n<div class=\"fpc_box fpc_box-left\">\n    <div class=\"fpc_corner-box-left hidden-md-down\">\n        <div class=\"button fpc_page-tip-left\" (click)=\"goToHome()\">\n            <div class=\"fpc_corner-contents-left\">\n                <div class=\"fpc_corner-button-left\">Go to<strong>Main Page</strong></div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"jumbotron\">\n        <div class=\"row justify-content-center\">\n            Test\n        </div>\n    </div>\n\n    <div class=\"fpc_corner-box hidden-md-down\">\n        <div class=\"button fpc_page-tip\" (click)=\"goToContact()\">\n            <div class=\"fpc_corner-contents\">\n                <div class=\"fpc_corner-button\">Want to<strong>Contact Me?</strong></div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -462,6 +398,8 @@ module.exports = "<p>\n  portfolio works!\n</p>\n"
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_resume_service__ = __webpack_require__("../../../../../src/app/services/resume.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PortfolioComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -473,10 +411,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var PortfolioComponent = (function () {
-    function PortfolioComponent() {
+    function PortfolioComponent(resumeService, router) {
+        this.resumeService = resumeService;
+        this.router = router;
     }
     PortfolioComponent.prototype.ngOnInit = function () {
+    };
+    PortfolioComponent.prototype.goToHome = function () {
+        this.router.navigate(['/']);
+    };
+    PortfolioComponent.prototype.goToContact = function () {
+        this.router.navigate(['/contact']);
     };
     return PortfolioComponent;
 }());
@@ -486,9 +434,10 @@ PortfolioComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/portfolio/portfolio.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/portfolio/portfolio.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_resume_service__["a" /* ResumeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_resume_service__["a" /* ResumeService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], PortfolioComponent);
 
+var _a, _b;
 //# sourceMappingURL=portfolio.component.js.map
 
 /***/ }),
@@ -535,6 +484,51 @@ ContactService = __decorate([
 
 var _a;
 //# sourceMappingURL=contact.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/portfolio.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PortfolioService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PortfolioService = (function () {
+    function PortfolioService(http) {
+        this.http = http;
+    }
+    PortfolioService.prototype.getContactData = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        // used in production
+        // return this.http.get('http://localhost:3000/resumeContact', {headers: headers}).map(res => res.json());
+        // used for heroku deployment
+        return this.http.get('/resumeContact', { headers: headers }).map(function (res) { return res.json(); });
+    };
+    return PortfolioService;
+}());
+PortfolioService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
+], PortfolioService);
+
+var _a;
+//# sourceMappingURL=portfolio.service.js.map
 
 /***/ }),
 

@@ -25,12 +25,8 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  goHome() {
-    this.router.navigate(['/']);
-  }
-
-  goToContact() {
-    this.router.navigate(['/contact']);
+  goToPortfolio() {
+    this.router.navigate(['/portfolio']);
   }
 
   navigateToLinkedIn() {

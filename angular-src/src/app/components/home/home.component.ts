@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  goToContact() {
-    this.router.navigate(['/contact']);
+  goToPortfolio() {
+    this.router.navigate(['/portfolio']);
   }
 }
